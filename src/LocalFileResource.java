@@ -1,0 +1,22 @@
+
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
+import java.net.URLConnection;
+
+
+
+public class LocalFileResource implements Resource{
+	private final String fileName;
+
+    public LocalFileResource(String name) {
+        this.fileName = name;
+    }
+
+    public InputStream getInputStream() throws IOException{
+    	 InputStream ins =LocalFileResource.class.getResourceAsStream("/"+fileName);
+     	return ins;
+    }
+}
